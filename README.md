@@ -1,4 +1,4 @@
-Test load balancer support for Scalatest framework
+**Test load balancer support for Scalatest framework**
 
 This repository contains two main classes:
 
@@ -8,7 +8,7 @@ This repository contains two main classes:
 
 I have tested it working with only the scalatest runner. Following is the command which will run all the tests in the functional-tests.jar package.
 
-java $TESTS_JVM_OPS -Dtlb.jar.file=./lib/functional-tests.jar -cp "./lib/*" org.scalatest.tools.Runner -u reports -r ruk.tlb.ScalaTestTLBReporter -oW -s org.scalatest.ScalaTestTLBSuite
+```java $TESTS_JVM_OPS -Dtlb.jar.file=./lib/functional-tests.jar -cp "./lib/*" org.scalatest.tools.Runner -u reports -r ruk.tlb.ScalaTestTLBReporter -oW -s org.scalatest.ScalaTestTLBSuite```
 
 Few things to note in the above command are:
 
