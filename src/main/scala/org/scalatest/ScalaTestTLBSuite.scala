@@ -23,7 +23,7 @@ class ScalaTestTLBSuite extends Suite {
 
   override def nestedSuites = {
     val loader = new URLClassLoader(Array(new File(jarFile).toURI.toURL), classOf[Suite].getClassLoader)
-    val accessibleSuites: Set[String] = (new SuiteDiscoveryHelper).discoverSuiteNames(List(jarFile), loader)
+    val accessibleSuites: Set[String] = SuiteDiscoveryHelper.discoverSuiteNames(List(jarFile), loader, None)
 
     val files = splitter.filterSuites(accessibleSuites.map(x => new TlbSuiteFileImpl(x)).toSeq)
     val orderedFiles = files.sorted(Ordering.comparatorToOrdering(orderer))
